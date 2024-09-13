@@ -18,6 +18,8 @@ To run the project on Replit, you need to set an environment variable `OPENAI_AP
 
 You can test the functionality without running it on Replit by visiting this link: [Live Demo](https://370619bc-62e7-4b43-95d2-52bd92cdb03a-00-2scua1hrwws7a.worf.replit.dev/)
 
+**Example inputs and outputs** can be found in `contents` folder.
+
 ## How It Works
 
 1. The `.docx` file is parsed using the built-in `Docx2txtLoader` from LangChain.
