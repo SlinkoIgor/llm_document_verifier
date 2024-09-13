@@ -1,0 +1,9 @@
+gradio
+python-docx
+langchain
+langchain_community
+langchain-openai
+openai
+python-dotenv
+openpyxl
+docx2txt

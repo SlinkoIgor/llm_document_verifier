@@ -1,0 +1,45 @@
+# config.yaml
+
+logging:
+  level: INFO
+
+openai:
+  model: gpt-4o
+  temperature: 1
+  max_retries: 3
+  max_concurrency: 1
+
+prompts:
+  contract2json_system: |
+    You will be provided with a contract text containing various terms and constraints for work execution 
+    (e.g., budget constraints, types of allowable work, etc.). Your task is to extract all key terms from 
+    the contract and structure them in a valid JSON format and nothing else. Terms may be related to 
+    different sections and subsections of the contract, which should be reflected in your JSON.
+
+  check_task_system: |
+    You will be given a structured description of a contract between a client and a contractor, including 
+    various terms and conditions for work execution (e.g., budget constraints, types of allowable work, 
+    etc.). You will also receive a task description and the associated cost proposed by the contractor.
+
+    Your task is to evaluate whether the task description complies with the contract conditions. If the 
+    task description violates one or more conditions, specify the reasons for the violation.
+
+    Provide the response in the following JSON format:
+
+    {
+      'why_violates': 'Explain why the task or expense might violate the contract. Leave this field empty 
+      if everything complies.',
+      'why_ok': 'Provide arguments for why the expense is justified according to the contract.',
+      'clarification_questions': 'List any questions that need to be answered by the contractor to 
+      determine whether the task complies or violates.',
+      'decision': 'ok'/'violates'/'unclear'
+    }
+
+paths:
+  output_file: checked_tasks.csv
+
+interface:
+  title: Contract + Tasks -> Decisions
+  description: |
+    Upload a .docx or .json file to extract its text and download it as a .json file. 
+    Optionally, provide a task file (.csv or .xlsx) to check if tasks comply with the contract.
