@@ -18,7 +18,7 @@ To run the project on Replit, you need to set an environment variable `OPENAI_AP
 
 ### 🧪 Try it Out
 
-You can test the functionality without running it on Replit by visiting this link: [Live Demo](https://370619bc-62e7-4b43-95d2-52bd92cdb03a-00-2scua1hrwws7a.worf.replit.dev/)
+You can test the functionality without running it on Replit by visiting this link: [Live Demo](https://llmdocumentverifier-igorslinko.replit.app/)
 
 **Example inputs and outputs** can be found in the `contents` folder.
 
